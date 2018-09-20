@@ -36,11 +36,16 @@ let getEmpleado = (id) => {
 
 }
 
-getEmpleado(1).then(empleado => {
-    getSalario(empleado).then(result => {
-        console.log(result);
-    }, (err) => console.log(err))
-}, (err) => console.log(err))
+getEmpleado(6).then(empleado => {
+
+        return getSalario(empleado)
+    })
+    .then(salario => {
+        console.log(salario);
+    })
+    .catch(err => {
+        console.log(err);
+    })
 
 
 let getSalario = (empleado) => {
