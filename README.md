@@ -1,6 +1,6 @@
 # shurg
 Learning Node.js
 
-# To install
+### To install
 
 `npm install`
