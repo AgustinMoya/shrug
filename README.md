@@ -1,4 +1,4 @@
-# shurg
+# shrug
 Learning Node.js
 
 ### To install
