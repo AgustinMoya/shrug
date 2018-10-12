@@ -11,3 +11,18 @@ if (process.env.NODE_ENV === 'dev') {
 } else urlDB = process.env.MONGO_URI
 
 process.env.URLDB = urlDB;
+
+
+//mongodb://elausAMG:asd123@ds127843.mlab.com:27843/cafe
+//Vencimiento del Token
+/*
+    60 segundos
+    60 minutos
+    24 horas
+    30 dias
+*/
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30
+
+//Seed de autenticacion
+
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo'
