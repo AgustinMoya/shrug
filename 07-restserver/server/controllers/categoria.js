@@ -9,7 +9,9 @@ let Categoria = require('../models/categoria')
 // ============================
 // Mostrar todas las categorias
 // ============================
-app.get('/categoria', (req, res) => {});
+app.get('/categoria', (req, res) => {
+
+});
 
 
 // ============================
