@@ -12,20 +12,23 @@ let app = express();
 // ============================
 app.get('/categoria', verificaToken, (req, res) => {
 
-    Categoria.find({}).exec((err, categorias) => {
+    Categoria.find({})
+        .sort('descripcion')
+        .populate('usuario', 'nombre email')
+        .exec((err, categorias) => {
 
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err
-            });
-        }
+            if (err) {
+                return res.status(500).json({
+                    ok: false,
+                    err
+                });
+            }
 
-        res.json({
-            ok: true,
-            categorias
+            res.json({
+                ok: true,
+                categorias
+            })
         })
-    })
 
 });
 
