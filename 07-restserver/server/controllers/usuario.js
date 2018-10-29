@@ -11,7 +11,6 @@ const app = express();
 
 app.get('/usuario', verificaToken, (req, res) => {
 
-
     let desde = req.query.desde || 0;
     desde = Number(desde);
 
@@ -42,11 +41,9 @@ app.get('/usuario', verificaToken, (req, res) => {
 
 
         });
-
-
 });
-
-app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
+// [verificaToken, verificaAdmin_Role]
+app.post('/usuario', function(req, res) {
 
     let body = req.body;
 
@@ -74,7 +71,6 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
 
     });
-
 
 });
 
@@ -136,11 +132,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
             ok: true,
             usuario: usuarioBorrado
         });
-
     });
-
-
-
 });
 
 

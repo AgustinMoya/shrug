@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 // =====================
 let verificaToken = (req, res, next) => {
 
-    let token = req.get('token');
+    let token = req.get('Authorization');
 
     jwt.verify(token, process.env.SEED, (err, decoded) => {
 
@@ -18,10 +18,12 @@ let verificaToken = (req, res, next) => {
                 }
             });
         }
+
         req.usuario = decoded.usuario;
         next();
 
     });
+
 };
 
 // =====================
@@ -45,7 +47,7 @@ let verificaAdmin_Role = (req, res, next) => {
 };
 
 // =====================
-// Verifica token imagen
+// Verifica token para imagen
 // =====================
 let verificaTokenImg = (req, res, next) => {
 
@@ -67,8 +69,8 @@ let verificaTokenImg = (req, res, next) => {
 
     });
 
-}
 
+}
 
 module.exports = {
     verificaToken,
