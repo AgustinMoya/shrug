@@ -175,8 +175,6 @@ function borraArchivo(nombreImagen, tipo) {
     if (fs.existsSync(pathImagen)) {
         fs.unlinkSync(pathImagen);
     }
-
-
 }
 
 module.exports = app;
