@@ -14,4 +14,4 @@ let categoriaSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('categoria', categoriaSchema)
+module.exports = mongoose.model('Categoria', categoriaSchema)
