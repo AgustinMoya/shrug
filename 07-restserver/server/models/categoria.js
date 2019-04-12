@@ -1,17 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-let Schema = mongoose.Schema;
+let Schema = mongoose.Schema
 
 let categoriaSchema = new Schema({
-    descripcion: {
-        type: String,
-        required: [true, 'La descripcion de la categoria es necesaria'],
-        unique: true
-    },
-    usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'usuario'
-    }
-});
+  descripcion: {
+    type: String,
+    required: [true, 'La descripcion de la categoria es necesaria'],
+    unique: true
+  },
+  usuario: { type: Schema.Types.ObjectId, ref: 'Usuario' }
+})
 
 module.exports = mongoose.model('Categoria', categoriaSchema)
